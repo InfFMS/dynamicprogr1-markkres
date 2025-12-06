@@ -11,3 +11,10 @@ G(n) = G(n - 4) + n, если n > 25
 """
 
 # Решение будет здесь
+N=150774
+G_val=[0]*(N+1)
+for n in range(26):
+    G_val[n]=2*(n+1)
+for n in range(26, N+1):
+    G_val[n]=G_val[n-4]+n
+print(G_val[N-1]-G_val[N-5])
