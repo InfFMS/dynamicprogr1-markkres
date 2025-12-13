@@ -11,22 +11,4 @@
 """
 
 # Решение будет здесь
-WIN=[0]*350
-for i in range(349,0,-1):
-    WIN[i]=0
-    for j in (i+2,i+3,i*3):
-        if j>=349 or WIN[j]==0:
-            WIN[i]=1
-            break
-for S in range(1,349):
-    if WIN[S]==0:
-        bad=False
-        for first in (S+2,S+3,S*3):
-            if first<349 and WIN[first]==1:
-                continue
-            else:
-                bad=True
-                break
-        if not bad:
-            print(S)
-            break
+print(int(349/9)+1)
