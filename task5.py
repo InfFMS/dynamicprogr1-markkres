@@ -8,3 +8,11 @@
 """
 
 # Решение будет здесь
+S=100 
+c=[1, 2, 5]
+dp=[0]*(S+1)
+dp[0]=1
+for coin in c:
+    for i in range(coin,S+1):
+        dp[i]+=dp[i-coin]
+print(dp[S])

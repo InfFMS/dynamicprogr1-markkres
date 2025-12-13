@@ -14,3 +14,22 @@
 """
 
 # Решение будет здесь
+max_S=348
+mas=[""]*(max_S+1)
+for s in range(1,max_S+1):
+    if s+2>=349 or s+3>=349 or s*3>+349:
+        mas[s]="win1"
+for s in range(1,max_S+1):
+    if mas[s]=="":
+        a=[s+2,s+3,s*3]
+        if all(m<=max_S and mas[m]=="win1" for m in a):
+            mas[s]="lose"
+for s in range(1,max_S+1):
+    if mas[s]=="":
+        a=[s+2,s+3,s*3]
+        if any(m<=max_S and mas[m]=="lose" for m in a):
+            mas[s]="win2"
+ans=[str(s) for s in range(1,max_S+1) if mas[s]=="win2"]
+print(" ".join(ans[:2]))
+    
+
