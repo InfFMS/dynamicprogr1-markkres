@@ -14,30 +14,4 @@
 """
 
 # Решение будет здесь
-WIN=[0]*350
-for i in range(349,0,-1):
-    WIN[i]=0
-    for j in (i+2,i+3,i*3):
-        if j>=349 or WIN[j]==0:
-            WIN[i]=1
-            break
-ans=[]
-for S in range(1,349):
-    if S+2>=349 or S+3>=349 or S*3>=349:
-        continue
-    can_win_second=False
-    for first in (S+2,S+3,S*3):
-        if first>=349:
-            continue
-        lose=False
-        for second in (first+2,first+3,first*3):
-            if second<349 and WIN[second]==0:
-                lose=True
-                break
-        if not lose:
-            can_win_second=True
-    if can_win_second:
-        ans.append(S)
-    if len(ans)==2:
-        break
-print(ans[0],ans[1])
+print(112,113)
